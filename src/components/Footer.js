@@ -2,7 +2,7 @@
 
 function Footer(){
     return (
-        <div>&copy; Copyright {new Date().getFullYear()}, https://econtreras-1.github.io/ , All rights reserved.</div>
+        <div>&copy; Copyright {new Date().getFullYear()}, All rights reserved.</div>
     );
 }
 
