@@ -1,4 +1,4 @@
-import flowerQuiz from '../flowerQuiz';
+import quizzes from '../data';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,11 +12,11 @@ export default function QuizSlide(props) {
 
     let onAnswerGiven = (event) => {
         setBtnState(true);
-        if(flowerQuiz[props.quizNum][props.questionNum].choices[event.target.id] === flowerQuiz[props.quizNum][props.questionNum].answer) {
-            setAnswer("Your answer "+ flowerQuiz[props.quizNum][props.questionNum].answer+ " is correct!");
+        if (quizzes[props.quizNum][props.questionNum].choices[event.target.id] === quizzes[props.quizNum][props.questionNum].answer) {
+            setAnswer("You answered " + quizzes[props.quizNum][props.questionNum].answer + " and got it right!");
             props.onAnswerGiven(true);
         } else {
-            setAnswer("Wrong Answer. Correct answer is: "+ flowerQuiz[props.quizNum][props.questionNum].answer);
+            setAnswer("You got it wrong. Correct answer is: " + quizzes[props.quizNum][props.questionNum].answer);
             props.onAnswerGiven(false);
         }
     }
@@ -24,13 +24,13 @@ export default function QuizSlide(props) {
         <Row><Col>
             <Figure>
                 <Figure.Image width={171} height={180}
-                    alt={flowerQuiz[props.quizNum][props.questionNum].answer}
-                    src={flowerQuiz[props.quizNum][props.questionNum].picture} />
+                    alt={quizzes[props.quizNum][props.questionNum].answer}
+                    src={quizzes[props.quizNum][props.questionNum].picture} />
                 <Figure.Caption>
-                    <Button disabled={btnState} id={0} onClick={onAnswerGiven}>{flowerQuiz[props.quizNum][props.questionNum].choices[0]}</Button>
-                    <Button disabled={btnState} id={1} onClick={onAnswerGiven}>{flowerQuiz[props.quizNum][props.questionNum].choices[1]}</Button>
-                    <Button disabled={btnState} id={2} onClick={onAnswerGiven}>{flowerQuiz[props.quizNum][props.questionNum].choices[2]}</Button>
-                    <br/>{answer}                   
+                    <Button disabled={btnState} id={0} onClick={onAnswerGiven}>{quizzes[props.quizNum][props.questionNum].choices[0]}</Button>
+                    <Button disabled={btnState} id={1} onClick={onAnswerGiven}>{quizzes[props.quizNum][props.questionNum].choices[1]}</Button>
+                    <Button disabled={btnState} id={2} onClick={onAnswerGiven}>{quizzes[props.quizNum][props.questionNum].choices[2]}</Button>
+                    <br />{answer}
                 </Figure.Caption>
             </Figure>
 
