@@ -1,5 +1,5 @@
 import flowers from '../flowers';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Figure from 'react-bootstrap/Figure';
 import 'bootstrap/dist/css/bootstrap.css';
 
