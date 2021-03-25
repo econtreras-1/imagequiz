@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 function Home(props) {
 
     let onImageClick = (event) => {
-        props.onQuizClicked(event.target.id);
+        props.quizClicked(event.target.id);
     }
 
     return (
