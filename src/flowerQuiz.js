@@ -20,7 +20,7 @@ let createQuestions = () => {
 };
 
 let createQuiz = () => {
-    let quizzes = []; 
+    let flowerQuiz = []; 
     let questionPos = 0;
     let questions = createQuestions();
 
@@ -38,9 +38,9 @@ let createQuiz = () => {
             questions[questionPos+4],
             questions[questionPos+5]
         ];
-        quizzes.push(quiz);
+        flowerQuiz.push(quiz);
     }
-    return quizzes;
+    return flowerQuiz;
 };
 
 let flowerQuiz = createQuiz();
