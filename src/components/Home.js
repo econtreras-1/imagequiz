@@ -1,4 +1,4 @@
-import flowers from '../data';
+import flowers from '../flowers';
 import Figure from 'react-bootstrap/Figure';
 import 'bootstrap/dist/css/bootstrap.css';
 
