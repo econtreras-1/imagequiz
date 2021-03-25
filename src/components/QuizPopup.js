@@ -10,14 +10,14 @@ export default function QuizPopup(props) {
     const [answer, setAnswer] = useState("");
     const [btnState, setBtnState] = useState(false);
 
-    let answerGiven = (event) => {
+    let onResultGiven = (event) => {
         setBtnState(true);
         if(flowerQuiz[props.quizNumber][props.questionNumber].choices[event.target.id] === flowerQuiz[props.quizNumber][props.questionNumber].answer) {
             setAnswer("Your answer "+ flowerQuiz[props.quizNumber][props.questionNumber].answer+ " is correct!");
-            props.answerGiven(true);
+            props.onResultGiven(true);
         } else {
             setAnswer("Wrong Answer. Correct answer is: "+ flowerQuiz[props.quizNumber][props.questionNumber].answer);
-            props.answerGiven(false);
+            props.onResultGiven(false);
         }
     }
     
@@ -28,9 +28,9 @@ export default function QuizPopup(props) {
                     alt={flowerQuiz[props.quizNumber][props.questionNumber].answer}
                     src={flowerQuiz[props.quizNumber][props.questionNumber].picture} />
                 <Figure.Caption>
-                    <Button disabled={btnState} id={0} onClick={answerGiven}>{flowerQuiz[props.quizNumber][props.questionNumber].choices[0]}</Button>
-                    <Button disabled={btnState} id={1} onClick={answerGiven}>{flowerQuiz[props.quizNumber][props.questionNumber].choices[1]}</Button>
-                    <Button disabled={btnState} id={2} onClick={answerGiven}>{flowerQuiz[props.quizNumber][props.questionNumber].choices[2]}</Button>
+                    <Button disabled={btnState} id={0} onClick={onResultGiven}>{flowerQuiz[props.quizNumber][props.questionNumber].choices[0]}</Button>
+                    <Button disabled={btnState} id={1} onClick={onResultGiven}>{flowerQuiz[props.quizNumber][props.questionNumber].choices[1]}</Button>
+                    <Button disabled={btnState} id={2} onClick={onResultGiven}>{flowerQuiz[props.quizNumber][props.questionNumber].choices[2]}</Button>
                     <br/>{answer}                   
                 </Figure.Caption>
             </Figure>

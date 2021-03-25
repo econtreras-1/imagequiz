@@ -21,7 +21,9 @@ export default function Quiz(props) {
         if (result) {
             setResult(result + 1);
             prevScore = 1;
-        } else if (resultCount >= 6) {
+        }
+        
+        if (resultCount >= 6) {
             alert("Total result is: "+ (result + prevScore));
         }
     }
