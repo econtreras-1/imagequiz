@@ -30,9 +30,6 @@ export default function Login(props) {
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" onChange={onEmailChanged} />
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else (or will we?).
-        </Form.Text>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
