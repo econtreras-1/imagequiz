@@ -1,30 +1,32 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import QuizPopup from './QuizPopup';
+import { useState } from 'react';
+
 
 
 export default function Quiz(props) {
-    
+
     const [result, setResult] = useState(0);
-    const [resultCount, setResultCount] = useState(1);
+    const [answerCount, setAnswerCount] = useState(1);
 
     let onRestart = (event) => {
         window.location.reload();
     }
 
-    let onResultGiven = (result) => {
-        setResultCount(resultCount + 1);
-        let prevScore = 0;
-
-        if (result) {
+    let onAnswerGiven = (answer) => {
+        setAnswerCount(answerCount + 1);
+        
+        let lastPoint = 0;
+        
+        if (answer) {
             setResult(result + 1);
-            prevScore = 1;
+            lastPoint = 1;
         }
         
-        if (resultCount >= 6) {
-            alert("Total result is: "+ (result + prevScore));
+        if (answerCount >= 6) {
+            alert("Total score is: " + (result + lastPoint));
         }
     }
 
@@ -34,25 +36,25 @@ export default function Quiz(props) {
                 <Button onClick={onRestart}>Restart Quiz</Button>
             </Row>
             <Row>
-                <h2>Current result: {result}/6</h2>
+                <h2>Current Score: {result}/6</h2>
             </Row>
             <Row>
-                <QuizPopup onResultGiven={onResultGiven} quizNumber={props.quizNumber} questionNumber={0} />
+                <QuizPopup onAnswerGiven={onAnswerGiven} quizNum={props.quizNum} questionNum={0} />
             </Row>
             <Row>
-                <QuizPopup onResultGiven={onResultGiven} quizNumber={props.quizNumber} questionNumber={1} />
+                <QuizPopup onAnswerGiven={onAnswerGiven} quizNum={props.quizNum} questionNum={1} />
             </Row>
             <Row>
-                <QuizPopup onResultGiven={onResultGiven} quizNumber={props.quizNumber} questionNumber={2} />
+                <QuizPopup onAnswerGiven={onAnswerGiven} quizNum={props.quizNum} questionNum={2} />
             </Row>
             <Row>
-                <QuizPopup onResultGiven={onResultGiven} quizNumber={props.quizNumber} questionNumber={3} />
+                <QuizPopup onAnswerGiven={onAnswerGiven} quizNum={props.quizNum} questionNum={3} />
             </Row>
             <Row>
-                <QuizPopup onResultGiven={onResultGiven} quizNumber={props.quizNumber} questionNumber={4} />
+                <QuizPopup onAnswerGiven={onAnswerGiven} quizNum={props.quizNum} questionNum={4} />
             </Row>
             <Row>
-                <QuizPopup onResultGiven={onResultGiven} quizNumber={props.quizNumber} questionNumber={5} />
+                <QuizPopup onAnswerGiven={onAnswerGiven} quizNum={props.quizNum} questionNum={5} />
             </Row>
         </Col>
     );
