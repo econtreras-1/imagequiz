@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import QuizPopup from './QuizPopup';
+import QuizPopup from './QuizPopup.js';
 
 
 export default function Quiz(props) {
