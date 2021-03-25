@@ -13,10 +13,10 @@ export default function QuizSlide(props) {
     let onAnswerGiven = (event) => {
         setBtnState(true);
         if (quizzes[props.quizNum][props.questionNum].choices[event.target.id] === quizzes[props.quizNum][props.questionNum].answer) {
-            setAnswer("You answered " + quizzes[props.quizNum][props.questionNum].answer + " and got it right!");
+            setAnswer("Your answer " + quizzes[props.quizNum][props.questionNum].answer + " is correct!");
             props.onAnswerGiven(true);
         } else {
-            setAnswer("You got it wrong. Correct answer is: " + quizzes[props.quizNum][props.questionNum].answer);
+            setAnswer("Wrong Answer. Correct answer is: " + quizzes[props.quizNum][props.questionNum].answer);
             props.onAnswerGiven(false);
         }
     }
