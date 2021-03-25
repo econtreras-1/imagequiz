@@ -22,6 +22,7 @@ let generateQuizzes = () => {
     let quizzes = [];
     let questionIndex = 0;
     let questions = generateQuestions();
+    
     for (let i = 0; i < questions.length; i++) {
         questionIndex = i;
         if (questionIndex > (questions.length - 7)) {
