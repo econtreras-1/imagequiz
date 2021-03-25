@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Nav  from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../App.css'
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function NavigationBar() {
     return (
@@ -13,7 +14,11 @@ function NavigationBar() {
 
 
             <Nav.Link>
-                <Link className='link' to="/login">Login</Link>
+                {
+                    props.username==''?
+                    <Link className='link' to="/login">Login</Link> :
+                    <Link className='link' to='/logout'>{props.username}, Logout</Link>
+                }
             </Nav.Link>
 
         </Navbar>
