@@ -18,15 +18,15 @@ export default function Quiz(props) {
     let onAnswerGiven = (answer) => {
         setAnswerCount(answerCount + 1);
         
-        let lastPoint = 0;
+        let prevResult = 0;
         
         if (answer) {
             setResult(result + 1);
-            lastPoint = 1;
+            prevResult = 1;
         }
         
         if (answerCount >= 6) {
-            alert("Total score is: " + (result + lastPoint));
+            alert("Total score is: " + (result + prevResult));
         }
     }
 

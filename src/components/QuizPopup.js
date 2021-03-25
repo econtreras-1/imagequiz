@@ -20,6 +20,8 @@ export default function QuizSlide(props) {
             props.onAnswerGiven(false);
         }
     }
+
+    
     return (
         <Row><Col>
             <Figure>
