@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import QuizPopup from './QuizPopup.js';
+import QuizPopup from './QuizPopup';
 
 
 export default function Quiz(props) {
@@ -35,22 +35,22 @@ export default function Quiz(props) {
                 <h2>Current result: {result}/6</h2>
             </Row>
             <Row>
-                <QuizSlide onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={0} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={0} />
             </Row>
             <Row>
-                <QuizSlide onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={1} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={1} />
             </Row>
             <Row>
-                <QuizSlide onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={2} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={2} />
             </Row>
             <Row>
-                <QuizSlide onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={3} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={3} />
             </Row>
             <Row>
-                <QuizSlide onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={4} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={4} />
             </Row>
             <Row>
-                <QuizSlide onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={5} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={5} />
             </Row>
         </Col>
     );
