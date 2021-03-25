@@ -1,9 +1,14 @@
 import flowers from '../flowers';
+import {Link} from "react-router-dom";
 import Figure from 'react-bootstrap/Figure';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-function Home() {
+function Home(props) {
+
+    let imageClicked = (event) => {
+        props.quizClicked(event.target.id);
+    }
 
     return (
         <div>
@@ -15,13 +20,18 @@ function Home() {
 
 function createFlowers() {
     let images = [];
-    for (let flw in flowers) {
-        images.push(<Figure>
-            <Figure.Image width={171} height={180}
-                alt={flowers[flw].name}
-                src={flowers[flw].picture} />
-            <Figure.Caption>{flowers[flw].name}</Figure.Caption>
-        </Figure>)
+    let i = 0;
+    for (let flwr in flowers) {
+        images.push(
+            <Link id={i} onClick={imageClicked} className='link' to='/quiz'>
+                <Figure>
+                    <Figure.Image width={171} height={180}
+                        alt={flowers[flwr].name}
+                        src={flowers[flwr].picture} />
+                    <Figure.Caption>{flowers[flwr].name}</Figure.Caption>
+                </Figure>
+            </Link>)
+            i++;
     }
     return images;
 }
