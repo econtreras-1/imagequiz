@@ -13,10 +13,10 @@ export default function QuizPopup(props) {
     let answerGiven = (event) => {
         setBtnState(true);
         if(flowerQuiz[props.quizNumber][props.questionNumber].choices[event.target.id] === flowerQuiz[props.quizNumber][props.questionNumber].answer) {
-            setAnswer("You answered "+ flowerQuiz[props.quizNumber][props.questionNumber].answer+ " and got it right!");
+            setAnswer("Your answer "+ flowerQuiz[props.quizNumber][props.questionNumber].answer+ " is correct!");
             props.answerGiven(true);
         } else {
-            setAnswer("You got it wrong. Correct answer is: "+ flowerQuiz[props.quizNumber][props.questionNumber].answer);
+            setAnswer("Wrong Answer. Correct answer is: "+ flowerQuiz[props.quizNumber][props.questionNumber].answer);
             props.answerGiven(false);
         }
     }

@@ -35,22 +35,22 @@ export default function Quiz(props) {
                 <h2>Current result: {result}/6</h2>
             </Row>
             <Row>
-                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={0} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNumber={0} />
             </Row>
             <Row>
-                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={1} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNumber={1} />
             </Row>
             <Row>
-                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={2} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNumber={2} />
             </Row>
             <Row>
-                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={3} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNumber={3} />
             </Row>
             <Row>
-                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={4} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNumber={4} />
             </Row>
             <Row>
-                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNum={5} />
+                <QuizPopup onresultGiven={onresultGiven} quizNumber={props.quizNumber} questionNumber={5} />
             </Row>
         </Col>
     );
