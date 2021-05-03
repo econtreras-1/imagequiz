@@ -24,17 +24,7 @@ export default function QuizSlide(props) {
     
     return (
         <Row><Col>
-            <Figure>
-                <Figure.Image width={171} height={180}
-                    alt={quizzes[props.quizNum][props.questionNum].answer}
-                    src={quizzes[props.quizNum][props.questionNum].picture} />
-                <Figure.Caption>
-                    <Button disabled={btnState} id={0} onClick={onAnswerGiven}>{quizzes[props.quizNum][props.questionNum].choices[0]}</Button>
-                    <Button disabled={btnState} id={1} onClick={onAnswerGiven}>{quizzes[props.quizNum][props.questionNum].choices[1]}</Button>
-                    <Button disabled={btnState} id={2} onClick={onAnswerGiven}>{quizzes[props.quizNum][props.questionNum].choices[2]}</Button>
-                    <br />{answer}
-                </Figure.Caption>
-            </Figure>
+        
 
         </Col></Row>
     );
