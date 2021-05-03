@@ -3,7 +3,6 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Home from './components/Home';
 import Login from './components/Login';
-import { useHistory } from 'react-router-dom';
 import NavigationBar from "./components/NavigationBar";
 import { useState } from 'react';
 import Quiz from './components/Quiz';

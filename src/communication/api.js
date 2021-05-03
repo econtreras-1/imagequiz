@@ -1,4 +1,4 @@
-let apiHost = "https://econtreras-1-imagequiz.herokuapp.com";
+let apiHost = "https://imagequiz-serverside.herokuapp.com";
 
 let getFlowers = () => {
     return fetch(apiHost + '/flowers')
