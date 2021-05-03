@@ -24,13 +24,13 @@ export default function QuizSlide(props) {
     useEffect(() => {
         if (quizzes === null) {
             api.getFlowers()
-                .then(x => setQuizzes(generateQuizzes(x)))
+                .then(x => setQuizzes(createQuizzes(x)))
                 .catch(e => console.log(e));
         }
     });
 
     // Create Quiz Questions
-    function createQuizQuestions(flowers) {
+    function createQuestions(flowers) {
         let questions = [];
         let selectIndex = 0;
 
@@ -47,6 +47,31 @@ export default function QuizSlide(props) {
             questions.push(question);
         }
         return questions;
+    };
+
+    // Create Quizzes
+    function createQuizzes(flowers) {
+        let quizzes = [];
+        let questionIndex = 0;
+        let questions = createQuestions(flowers);
+
+        for (let i = 0; i < questions.length; i++) {
+            questionIndex = i;
+            if (questionIndex > (questions.length - 7)) {
+                questionIndex = i - 5;
+            }
+
+            let quiz = [
+                questions[questionIndex],
+                questions[questionIndex + 1],
+                questions[questionIndex + 2],
+                questions[questionIndex + 3],
+                questions[questionIndex + 4],
+                questions[questionIndex + 5]
+            ];
+            quizzes.push(quiz);
+        }
+        return quizzes;
     };
 
     
