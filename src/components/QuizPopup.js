@@ -21,6 +21,14 @@ export default function QuizSlide(props) {
         }
     }
 
+    useEffect(() => {
+        if (quizzes === null) {
+            api.getFlowers()
+                .then(x => setQuizzes(generateQuizzes(x)))
+                .catch(e => console.log(e));
+        }
+    });
+
     
     return (
         <Row><Col>
