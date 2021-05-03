@@ -29,6 +29,26 @@ export default function QuizSlide(props) {
         }
     });
 
+    // Create Quiz Questions
+    function createQuizQuestions(flowers) {
+        let questions = [];
+        let selectIndex = 0;
+
+        for (let i = 0; i < flowers.length; i++) {
+            selectIndex = i;
+            if (selectIndex > (flowers.length - 4)) {
+                selectIndex = i - 2;
+            }
+            let question = {
+                picture: flowers[i].picture,
+                choices: [flowers[selectIndex].name, flowers[selectIndex + 1].name, flowers[selectIndex + 2].name],
+                answer: flowers[i].name
+            };
+            questions.push(question);
+        }
+        return questions;
+    };
+
     
     return (
         <Row><Col>
