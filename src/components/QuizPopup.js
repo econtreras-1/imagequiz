@@ -1,14 +1,15 @@
-import quizzes from '../data';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import api from '../communication/api';
 
 
 export default function QuizSlide(props) {
     const [answer, setAnswer] = useState("");
     const [btnState, setBtnState] = useState(false);
+    const [quizzes, setQuizzes] = useState(null);
 
     let onAnswerGiven = (event) => {
         setBtnState(true);
